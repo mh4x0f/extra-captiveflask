@@ -33,7 +33,7 @@ class ExampleTemplate(CaptiveTemplatePlugin):
         'Language' : 'En',
         'TemplatePath' : 'templates/Example',
         'StaticPath' : 'templates/Example/static',
-        'Preview' : ''
+        'Preview' : 'plugins/captivePortal/templates/Example/preview.png'
     }
 
     def __init__(self):
