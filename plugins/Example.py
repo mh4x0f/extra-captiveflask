@@ -1,5 +1,3 @@
-import re
-from ast import literal_eval 
 from plugins.captivePortal.plugin import CaptiveTemplatePlugin
 
 """
@@ -30,7 +28,6 @@ class ExampleTemplate(CaptiveTemplatePlugin):
         'Version'   : '1.0',
         'Description' : 'Example is a simple portal default page',
         'Author'    : 'Pumpkin-Dev',
-        'Language' : 'En',
         'TemplatePath' : 'templates/Example',
         'StaticPath' : 'templates/Example/static',
         'Preview' : 'plugins/captivePortal/templates/Example/preview.png'
@@ -43,9 +40,10 @@ class ExampleTemplate(CaptiveTemplatePlugin):
         self.ConfigParser = True
 
     def init_language(self, lang):
-        if (lang.lower() != 'default'):
-            self.TemplatePath = 'templates/Example/language/{}'.format(lang)
-            return
-        for key,value in self.meta.items():
-            self.__dict__[key] = value      
+        if (lang):
+            if (lang.lower() != 'default'):
+                self.TemplatePath = 'templates/Example/language/{}'.format(lang)
+                return
+            for key,value in self.meta.items():
+                self.__dict__[key] = value      
         
