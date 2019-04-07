@@ -74,7 +74,7 @@ Set Up the Phishing your custom page login captive portal
 <body >
   <div >
     <!-- Page content -->
-    <form method="POST" action="/login?{{ orig_url }}">
+    <form method="POST" >
       Login:<br>
       <input type="text" name="login">
       <br>
