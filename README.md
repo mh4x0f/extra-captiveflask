@@ -204,6 +204,24 @@ PtBr=false
 
 ```
 
+the settings.ini only need to edit when you want to send me a pull request, if you do somes test, you want to edit this file bellow.
+``` sh
+/core/config/app/captive-portal.ini
+```
+
+``` ini
+[plugins]
+FlaskDemo=true
+Login_v4=false
+loginPage=false
+DarkLogin=false
+
+[set_FlaskDemo]
+Default=true
+En=false
+ptBr=false
+```
+
 #### Preview Image
 A preview image can be displayed on tab captiv-portal. This image is specified using the `preview` parameter the class of plugin.
 ``` python
