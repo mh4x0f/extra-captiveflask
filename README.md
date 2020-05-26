@@ -207,12 +207,12 @@ PtBr=false
 ```
 #### Include File .py
 
-after configure the file ExamplePlugin.py, you need to move from the directory **captivePortal** in root wifipumpkin3 folder **/wifipumpkin3/plugins/captiveflask**
+after configure the file ExamplePlugin.py, you need to move from the directory **captiveflask** in root wifipumpkin3 folder **/wifipumpkin3/plugins/captiveflask**
 as you can see on screenshot bellow:
 
 ![captivefolder](img/captiveportal_folder.png)
 
-with file **ExamplePlugin.py** into captivePortal directory, you need to reinstall the tool, you have  to reinstall on version  the python installed, let's go:
+with file **ExamplePlugin.py** into captiveflask directory, you need to reinstall the tool, you have  to reinstall on version  the python installed, let's go:
 
 ``` bash
 # for python3.7
