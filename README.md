@@ -2,7 +2,7 @@
 Developing extra captive portals for captiveflask plugins
 
 ### description 
-the plugin captiveflask allow the Attacker mount a wireless access point which is used in conjuction with a web server and iptables traffic capturing rules to create the phishing portal. Users can freely connect to these networks without a password and will often be directed to a login page where a password is required before being allowed to browse the web.   
+the plugin captiveflask allow the Attacker mount a wireless access point which is used in conjuction with a web server and iptables traffic capturing rules to create the phishing portal. Users can freely connect to these networks without a password and will often be directed to a login page where a password is required before being allowed to browse the web.
 
 ### What is Wireless Phishing?
 Wireless phishing is any technique by which an attacker attempts to convince wireless network users to divulge sensitive information. As we previously mentioned the associated wireless network is generally open and access to network resources is mediated by a web application known as a captive portal. A captive portal is a web page accessed with a web browser that is displayed to newly connected users of a Wi-Fi network before they are granted broader access to network resources. Captive portals are commonly used to present a landing or log-in page which may require authentication, payment, acceptance of an end-user license agreement or an acceptable use policy, or other valid credentials that both the host and user agree to adhere by. (Wiki)
@@ -106,15 +106,19 @@ Set Up the Phishing your custom page login successful
 </html>
 ```
 
-now, you need to include inside **.config/wifipumpkin3/config/app/captive-portal.ini** the key *ExamplePlugin=false* in tag plugins.
+now, you need to include inside **settings.ini** the key *ExamplePlugin=false* in tag plugins and all information of plugins as you can see bellow.
 ``` ini
 [plugins]
-FlaskDemo=false
-Login_v4=false
-loginPage=false
-DarkLogin=true
- # new key with my new plugin
+Example=false
 ExamplePlugin=false 
+
+
+[info_ExamplePlugin]
+name="ExamplePlugin"
+version=1.0
+description="ExamplePlugin is a simple portal default page"
+author="dev"
+preview="https://i.imgur.com/XXXXXXX.png"
 
 ```
 
@@ -189,12 +193,16 @@ ExamplePlugin/
 now, you need to include inside **captive-portal.ini** the keys.
 ``` ini
 [plugins]
-FlaskDemo=false
-Login_v4=false
-loginPage=false
-DarkLogin=true
+Example=false
 ExamplePlugin=false
 
+
+[info_ExamplePlugin]
+name="ExamplePlugin"
+version=1.0
+description="ExamplePlugin is a simple portal default page"
+author="dev"
+preview="https://i.imgur.com/XXXXXXX.png"
 # new section
 [set_ExamplePlugin]  
 # default language
@@ -205,29 +213,6 @@ En=false
 PtBr=false
 
 ```
-#### Include File .py
-
-after configure the file ExamplePlugin.py, you need to move from the directory **captiveflask** in root wifipumpkin3 folder **/wifipumpkin3/plugins/captiveflask**
-as you can see on screenshot bellow:
-
-![captivefolder](img/captiveportal_folder.png)
-
-with file **ExamplePlugin.py** into captiveflask directory, you need to reinstall the tool, you have  to reinstall on version  the python installed, let's go:
-
-``` bash
-# for python3.7
-$ sudo python3.7 setup.py install
-# for python3.8
-$ sudo python3.8 setup.py install
-```
-if you running on Kali linux and followed the guide how to install above, only need to:
-``` bash
-python3 setup.py install
-```
-
-#### Include the Templates
-
-now, it very simples copy the folder **ExamplePlugin** to path **.config/wifipumpkin3/config/templates/**, the plugin will be listed and working fine for capture the credentails.
 
 #### Enjoy 
 
