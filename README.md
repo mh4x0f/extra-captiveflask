@@ -214,6 +214,14 @@ PtBr=false
 
 ```
 
+### HowTo test my custom captiveflask 
+
+if you allready wp3 installed, only need to use the command **captiveflask** on terminal. this command is mount a webserver with flask running on **http://localhost:80**, open this your favorites browser and preview your custom portal.
+
+```bash
+$ sudo captiveflask -t $(pwd)/ExamplePlugin -r 127.0.0.1 -s $(pwd)/ExamplePlugin/static
+```
+
 #### Enjoy 
 
 now, you can choose to keep your custom version for yourself or send it to all wp3 users.
