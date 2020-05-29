@@ -18,30 +18,20 @@ import wifipumpkin3.core.utility.constants as C
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-class Example(CaptiveTemplatePlugin):
+class facebook(CaptiveTemplatePlugin):
     meta = {
-        'Name'      : 'Example',
+        'Name'      : 'facebook',
         'Version'   : '1.0',
-        'Description' : 'Example is a simple portal default page',
+        'Description' : 'facebook account login page template',
         'Author'    : 'mh4x0f',
-        "TemplatePath": C.TEMPLATES_FLASK + "templates/Example",
-        "StaticPath": C.TEMPLATES_FLASK + "templates/Example/static",
-        "Preview": "templates/Example/preview.png",
+        "TemplatePath": C.TEMPLATES_FLASK + "templates/facebook",
+        "StaticPath": C.TEMPLATES_FLASK + "templates/facebook/static",
+        "Preview": "templates/facebook/preview.png",
     }
 
     def __init__(self):
         for key,value in self.meta.items():
             self.__dict__[key] = value
         self.dict_domain = {}
-        self.ConfigParser = True
-
-    def init_language(self, lang):
-        if (lang):
-            if (lang.lower() != 'default'):
-                self.TemplatePath = (
-                    C.TEMPLATES_FLASK + "templates/Example/language/{}".format(lang)
-                )
-                return
-            for key,value in self.meta.items():
-                self.__dict__[key] = value      
+        self.ConfigParser = True  
         

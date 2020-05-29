@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Microsoft login </title>
+
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" id="bootstrap-css">
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+<style type="text/css">
+  body{
+    font-family: 'Roboto', sans-serif;
+    background-image:url("{{ url_for('static', filename='img/f1f376e17e8ec550cc5a770a1bd3fd2a.jpg') }}"); 
+    background-size:cover; 
+  }
+
+a{
+  color: #1985e2;
+}
+
+.col_g{
+color: #887c7c;
+}
+.form-control{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 1px;
+    box-shadow: none;
+
+}
+.submit_h{
+
+color: #fff;
+background-color:#0067b8;
+
+}
+
+.login_footer{
+  position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:#353434d1;
+   color: white;
+   text-align: center;
+   padding: 10px;
+   
+   }
+.login_footer li{
+float: right;
+}
+
+.login_footer ul{
+
+list-style: none;
+}
+
+.login_footer li a{
+padding: 0px 10px;
+color: white;
+}
+
+
+.form-control:focus {
+    border-color: #0067b8;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: none;
+}
+
+</style>
+
+</head>
+<body>
+
+  <div class="main_div_full"> <!-- main div start -->
+
+    <div class="container">
+      <div class="row">
+    
+    <div class="col-md-5 col-md-offset-3" style="margin-top: 10%;">
+      <div class="col-md-12" style="background-color: white; padding:30px;">
+    
+    <img src="https://secure.aadcdn.microsoftonline-p.com/ests/2.1.8233.17/content/images/microsoft_logo.svg?x=ee5c8d9fb6248c938fd0dc19370e90bd">
+    
+        <form class="form">
+          <h3 class="col_g">Microsoft login successful</h3>
+          <br/>
+          <h5 class="col_g">You're signed in to your account, Now more than ever it's important you have access to the Internet to stay in-touch with your family, friends, work and school. </h5>
+        </form>
+      </div>
+    
+    </div>
+      </div>
+    </div>
+    
+    <div class="login_footer">
+    
+    <ul class="">
+       <li><a href="#">Terms of use</a></li>
+        <li><a href="#">Privacy & cookies</a></li>
+          <li><a href="#">©2020 microsoft</a></li>
+      </ul>
+    </div>
+  </div>
+  
+</body>
+</html>

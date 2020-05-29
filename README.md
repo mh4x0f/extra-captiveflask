@@ -15,19 +15,19 @@ first of all you need to make a repository fork and add your plugin template.
 Example configuration files for creating a simple template.
 
 ``` python
-# file => ExamplePlugin.py
+# file => exampleplugin.py
 from wifipumpkin3.plugins.captiveflask.plugin import CaptiveTemplatePlugin
 import wifipumpkin3.core.utility.constants as C # import plugin class base
 
-class ExamplePlugin(CaptiveTemplatePlugin):
+class exampleplugin(CaptiveTemplatePlugin):
     meta = {
-        'Name'      : 'ExamplePlugin',
+        'Name'      : 'exampleplugin',
         'Version'   : '1.0',
         'Description' : 'Example is a simple portal default page',
         'Author'    : ' the Author',
-        'TemplatePath' : C.TEMPLATES_FLASK +'templates/ExamplePlugin',
-        'StaticPath' : C.TEMPLATES_FLASK + 'templates/ExamplePlugin/static',
-        'Preview' : 'plugins/captivePortal/templates/ExamplePlugin/preview.png'
+        'TemplatePath' : C.TEMPLATES_FLASK +'templates/exampleplugin',
+        'StaticPath' : C.TEMPLATES_FLASK + 'templates/exampleplugin/static',
+        'Preview' : 'plugins/captivePortal/templates/exampleplugin/preview.png'
     }
 
     def __init__(self):
@@ -39,7 +39,7 @@ class ExamplePlugin(CaptiveTemplatePlugin):
 
 #### File architecture
 ``` bash
-ExamplePlugin/
+exampleplugin/
 ├── preview.png
 ├── static
 │   ├── css
@@ -106,17 +106,17 @@ Set Up the Phishing your custom page login successful
 </html>
 ```
 
-now, you need to include inside **settings.ini** the key *ExamplePlugin=false* in tag plugins and all information of plugins as you can see bellow.
+now, you need to include inside **settings.ini** the key *exampleplugin=false* in tag plugins and all information of plugins as you can see bellow.
 ``` ini
 [plugins]
-Example=false
-ExamplePlugin=false 
+example=false
+exampleplugin=false 
 
 
-[info_ExamplePlugin]
-name="ExamplePlugin"
+[info_exampleplugin]
+name="exampleplugin"
 version=1.0
-description="ExamplePlugin is a simple portal default page"
+description="exampleplugin is a simple portal default page"
 author="dev"
 preview="https://i.imgur.com/XXXXXXX.png"
 
@@ -126,23 +126,23 @@ preview="https://i.imgur.com/XXXXXXX.png"
 ### Add language into the guest portal
 
 if want to create multiple language that allow the user to pick a different one, checkout!
-In plugin ExamplePlugin.py change the bool var **ConfigParser** to True and override function **init_language**. look;
+In plugin exampleplugin.py change the bool var **ConfigParser** to True and override function **init_language**. look;
 
 ``` python
-# file => ExamplePlugin.py
+# file => exampleplugin.py
 from wifipumpkin3.plugins.captiveflask.plugin import CaptiveTemplatePlugin
 import wifipumpkin3.core.utility.constants as C # import plugin class base
 
 
-class ExamplePlugin(CaptiveTemplatePlugin):
+class exampleplugin(CaptiveTemplatePlugin):
     meta = {
-        'Name'      : 'ExamplePlugin',
+        'Name'      : 'exampleplugin',
         'Version'   : '1.0',
-        'Description' : 'Example is a simple portal default page',
+        'Description' : 'exampleplugin is a simple portal default page',
         'Author'    : 'The Author',
-        'TemplatePath' : C.TEMPLATES_FLASK +'templates/ExamplePlugin',
-        'StaticPath' : C.TEMPLATES_FLASK +'templates/ExamplePlugin/static',
-        'Preview' : 'plugins/captivePortal/templates/ExamplePlugin/preview.png'
+        'TemplatePath' : C.TEMPLATES_FLASK +'templates/exampleplugin',
+        'StaticPath' : C.TEMPLATES_FLASK +'templates/exampleplugin/static',
+        'Preview' : 'plugins/captivePortal/templates/exampleplugin/preview.png'
     }
 
     def __init__(self):
@@ -154,7 +154,7 @@ class ExamplePlugin(CaptiveTemplatePlugin):
     def init_language(self, lang):
         if (lang):
           if (lang.lower() != 'default'):
-              self.TemplatePath = C.TEMPLATES_FLASK +'templates/ExamplePlugin/language/{}'.format(lang)
+              self.TemplatePath = C.TEMPLATES_FLASK +'templates/exampleplugin/language/{}'.format(lang)
               return
           for key,value in self.meta.items():
               self.__dict__[key] = value
@@ -163,7 +163,7 @@ class ExamplePlugin(CaptiveTemplatePlugin):
 
 #### File architecture
 ``` bash
-ExamplePlugin/
+exampleplugin/
 ├── language
 │   ├── En
 │   │   └── templates
@@ -194,22 +194,23 @@ now, you need to include inside **captive-portal.ini** the keys.
 ``` ini
 [plugins]
 Example=false
-ExamplePlugin=false
+exampleplugin=false
 
 
-[info_ExamplePlugin]
-name="ExamplePlugin"
+[info_exampleplugin]
+name="exampleplugin"
 version=1.0
-description="ExamplePlugin is a simple portal default page"
+description="exampleplugin is a simple portal default page"
 author="dev"
 preview="https://i.imgur.com/XXXXXXX.png"
+
 # new section
-[set_ExamplePlugin]  
+[set_exampleplugin]  
 # default language
 Default=true
 # english language
 En=false
- #huer huer br
+ #huer huer br language
 PtBr=false
 
 ```
@@ -219,7 +220,8 @@ PtBr=false
 if you allready wp3 installed, only need to use the command **captiveflask** on terminal. this command is mount a webserver with flask running on **http://localhost:80**, open this your favorites browser and preview your custom portal.
 
 ```bash
-$ sudo captiveflask -t $(pwd)/ExamplePlugin -r 127.0.0.1 -s $(pwd)/ExamplePlugin/static
+$ cd extra-captiveflask
+$ sudo captiveflask -t $(pwd)/templates/exampleplugin -r 127.0.0.1 -s $(pwd)/templates/exampleplugin/static
 ```
 
 #### Enjoy 
