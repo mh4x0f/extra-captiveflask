@@ -229,3 +229,11 @@ $ sudo captiveflask -t $(pwd)/templates/exampleplugin -r 127.0.0.1 -s $(pwd)/tem
 now, you can choose to keep your custom version for yourself or send it to all wp3 users.
 
 have fun! Hack the Planet
+
+
+### Disclaimer
+
+Any malicious use of the contents from this repository, will not hold the author responsible, the contents are solely for educational purpose. 
+
+- Usage of **extra-captiveflask** template for attacking without prior mutual consistency can be considered as an **illegal activity**. 
+- Authors assume no liability and are not responsible for any misuse or damage caused by this program.
