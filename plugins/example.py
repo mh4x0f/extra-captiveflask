@@ -19,29 +19,11 @@ import wifipumpkin3.core.utility.constants as C
 # limitations under the License.
 
 class example(CaptiveTemplatePlugin):
-    meta = {
-        'Name'      : 'example',
-        'Version'   : '1.0',
-        'Description' : 'Example is a simple portal default page',
-        'Author'    : 'mh4x0f',
-        "TemplatePath": C.TEMPLATES_FLASK + "templates/example",
-        "StaticPath": C.TEMPLATES_FLASK + "templates/example/static",
-        "Preview": "templates/example/preview.png",
-    }
-
-    def __init__(self):
-        for key,value in self.meta.items():
-            self.__dict__[key] = value
-        self.dict_domain = {}
-        self.ConfigParser = True
-
-    def init_language(self, lang):
-        if (lang):
-            if (lang.lower() != 'default'):
-                self.TemplatePath = (
-                    C.TEMPLATES_FLASK + "templates/example/language/{}".format(lang)
-                )
-                return
-            for key,value in self.meta.items():
-                self.__dict__[key] = value      
-        
+    Name = "example"
+    Version = "1.0"
+    Description = "Example is a simple portal default page"
+    Author = "mh4x0f"
+    TemplatePath = C.TEMPLATES_FLASK + "templates/example"
+    StaticPath = C.TEMPLATES_FLASK + "templates/example/static"
+    Preview = C.TEMPLATES_FLASK + "templates/example/preview.png"
+    Languages = ["En", "ptBr"] 

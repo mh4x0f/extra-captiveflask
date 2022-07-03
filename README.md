@@ -20,21 +20,13 @@ from wifipumpkin3.plugins.captiveflask.plugin import CaptiveTemplatePlugin
 import wifipumpkin3.core.utility.constants as C # import plugin class base
 
 class exampleplugin(CaptiveTemplatePlugin):
-    meta = {
-        'Name'      : 'exampleplugin',
-        'Version'   : '1.0',
-        'Description' : 'Example is a simple portal default page',
-        'Author'    : ' the Author',
-        'TemplatePath' : C.TEMPLATES_FLASK +'templates/exampleplugin',
-        'StaticPath' : C.TEMPLATES_FLASK + 'templates/exampleplugin/static',
-        'Preview' : 'plugins/captivePortal/templates/exampleplugin/preview.png'
-    }
-
-    def __init__(self):
-        for key,value in self.meta.items():
-            self.__dict__[key] = value
-        self.dict_domain = {}
-        self.ConfigParser = Flase 
+    Name = "exampleplugin"
+    Version = "1.0"
+    Description = "Example is a simple portal default page'"
+    Author = "mh4x0f"
+    TemplatePath = C.TEMPLATES_FLASK + "templates/exampleplugin"
+    StaticPath = C.TEMPLATES_FLASK + "templates/exampleplugin/static"
+    Preview = C.TEMPLATES_FLASK + "templates/exampleplugin/preview.png"
 ```
 
 #### File architecture
@@ -106,23 +98,6 @@ Set Up the Phishing your custom page login successful
 </html>
 ```
 
-now, you need to include inside **settings.ini** the key *exampleplugin=false* in tag plugins and all information of plugins as you can see bellow.
-``` ini
-[plugins]
-example=false
-exampleplugin=false 
-
-
-[info_exampleplugin]
-name="exampleplugin"
-version=1.0
-description="exampleplugin is a simple portal default page"
-author="dev"
-preview="https://i.imgur.com/XXXXXXX.png"
-
-```
-
-
 ### Add language into the guest portal
 
 if want to create multiple language that allow the user to pick a different one, checkout!
@@ -135,44 +110,20 @@ import wifipumpkin3.core.utility.constants as C # import plugin class base
 
 
 class exampleplugin(CaptiveTemplatePlugin):
-    meta = {
-        'Name'      : 'exampleplugin',
-        'Version'   : '1.0',
-        'Description' : 'exampleplugin is a simple portal default page',
-        'Author'    : 'The Author',
-        'TemplatePath' : C.TEMPLATES_FLASK +'templates/exampleplugin',
-        'StaticPath' : C.TEMPLATES_FLASK +'templates/exampleplugin/static',
-        'Preview' : 'plugins/captivePortal/templates/exampleplugin/preview.png'
-    }
-
-    def __init__(self):
-        for key,value in self.meta.items():
-            self.__dict__[key] = value
-        self.dict_domain = {}
-        self.ConfigParser = True
-
-    def init_language(self, lang):
-        if (lang):
-          if (lang.lower() != 'default'):
-              self.TemplatePath = C.TEMPLATES_FLASK +'templates/exampleplugin/language/{}'.format(lang)
-              return
-          for key,value in self.meta.items():
-              self.__dict__[key] = value
+    Name = "exampleplugin"
+    Version = "1.0"
+    Description = "Example is a simple portal default page'"
+    Author = "mh4x0f"
+    TemplatePath = C.TEMPLATES_FLASK + "templates/exampleplugin"
+    StaticPath = C.TEMPLATES_FLASK + "templates/exampleplugin/static"
+    Preview = C.TEMPLATES_FLASK + "templates/exampleplugin/preview.png"
+    Languages = ["En", "ptBr"] # default is En 
 
 ```
 
 #### File architecture
 ``` bash
 exampleplugin/
-├── language
-│   ├── En
-│   │   └── templates
-│   │       ├── login.html
-│   │       └── login_successful.html
-│   └── ptBr
-│       └── templates
-│           ├── login.html
-│           └── login_successful.html
 ├── preview.png
 ├── static
 │   ├── css
@@ -185,34 +136,16 @@ exampleplugin/
 │       ├── jquery-1.11.1.min.js
 │       └── main.js
 └── templates
-    ├── login.html
-    └── login_successful.html
+│   ├── En
+│   │   └── templates
+│   │       ├── login.html
+│   │       └── login_successful.html
+│   └── ptBr
+│       └── templates
+│           ├── login.html
+│           └── login_successful.html
 
 9 directories, 13 files
-```
-now, you need to include inside **captive-portal.ini** the keys.
-``` ini
-[plugins]
-Example=false
-exampleplugin=false
-
-
-[info_exampleplugin]
-name="exampleplugin"
-version=1.0
-description="exampleplugin is a simple portal default page"
-author="dev"
-preview="https://i.imgur.com/XXXXXXX.png"
-
-# new section
-[set_exampleplugin]  
-# default language
-Default=true
-# english language
-En=false
- #huer huer br language
-PtBr=false
-
 ```
 
 ### HowTo test my custom captiveflask 

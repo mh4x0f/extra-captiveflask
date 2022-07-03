@@ -19,19 +19,11 @@ import wifipumpkin3.core.utility.constants as C
 # limitations under the License.
 
 class microsoft(CaptiveTemplatePlugin):
-    meta = {
-        'Name'      : 'microsoft',
-        'Version'   : '1.0',
-        'Description' : 'microsoft email account login page template',
-        'Author'    : 'mh4x0f',
-        "TemplatePath": C.TEMPLATES_FLASK + "templates/microsoft",
-        "StaticPath": C.TEMPLATES_FLASK + "templates/microsoft/static",
-        "Preview": "templates/microsoft/preview.png",
-    }
-
-    def __init__(self):
-        for key,value in self.meta.items():
-            self.__dict__[key] = value
-        self.dict_domain = {}
-        self.ConfigParser = True  
+    Name = "microsoft"
+    Version = "1.0"
+    Description = "microsoft email account login page template"
+    Author = "mh4x0f"
+    TemplatePath = C.TEMPLATES_FLASK + "templates/microsoft"
+    StaticPath = C.TEMPLATES_FLASK + "templates/microsoft/static"
+    Preview = C.TEMPLATES_FLASK + "templates/microsoft/preview.png"
         

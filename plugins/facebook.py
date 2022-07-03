@@ -19,19 +19,11 @@ import wifipumpkin3.core.utility.constants as C
 # limitations under the License.
 
 class facebook(CaptiveTemplatePlugin):
-    meta = {
-        'Name'      : 'facebook',
-        'Version'   : '1.0',
-        'Description' : 'facebook account login page template',
-        'Author'    : 'mh4x0f',
-        "TemplatePath": C.TEMPLATES_FLASK + "templates/facebook",
-        "StaticPath": C.TEMPLATES_FLASK + "templates/facebook/static",
-        "Preview": "templates/facebook/preview.png",
-    }
-
-    def __init__(self):
-        for key,value in self.meta.items():
-            self.__dict__[key] = value
-        self.dict_domain = {}
-        self.ConfigParser = True  
+    Name = "facebook"
+    Version = "1.0"
+    Description = "facebook account login page template"
+    Author = "mh4x0f"
+    TemplatePath = C.TEMPLATES_FLASK + "templates/facebook"
+    StaticPath = C.TEMPLATES_FLASK + "templates/facebook/static"
+    Preview = C.TEMPLATES_FLASK + "templates/facebook/preview.png"
         
