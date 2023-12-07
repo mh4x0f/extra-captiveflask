@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -534,7 +533,8 @@
   overflow: hidden;
   }
 </style>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&lang=en" rel="stylesheet" type="text/css">
+  <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&lang=en" rel="stylesheet" type="text/css">-->
+  <link href="{{ url_for('static', filename='fonts/google_fonts.css') }}?family=Open+Sans:300,400&lang=en" rel="stylesheet" type="text/css">
   <style>
   h1, h2 {
   -webkit-animation-duration: 0.1s;
@@ -1212,14 +1212,6 @@
                  >
   ‪தமிழ்‬
   </option>
-  <option value="te"
-                 >
-  ‪తెలుగు‬
-  </option>
-  <option value="kn"
-                 >
-  ‪ಕನ್ನಡ‬
-  </option>
   <option value="ml"
                  >
   ‪മലയാളം‬
@@ -1235,14 +1227,6 @@
   <option value="lo"
                  >
   ‪ລາວ‬
-  </option>
-  <option value="km"
-                 >
-  ‪ខ្មែរ‬
-  </option>
-  <option value="ko"
-                 >
-  ‪한국어‬
   </option>
   <option value="zh-HK"
                  >
